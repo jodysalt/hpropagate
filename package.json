@@ -8,12 +8,15 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "tape test/*.test.js",
     "ci": "npm install && npm run lint && npm test",
-    "release": "rm -rf node_modules && npm i --production && npm publish"
+    "release": "rm -rf node_modules && npm i --production && npm publish",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Wealth Wizards Engineering",
   "license": "MIT",
   "dependencies": {
-    "uuid": "3.3.2"
+    "uuid": "3.3.2",
+    "snyk": "^1.316.1"
   },
   "repository": {
     "type": "git",
@@ -34,5 +37,6 @@
     "sinon": "^7.5.0",
     "supertest": "^3.4.2",
     "tape": "4.11.0"
-  }
+  },
+  "snyk": true
 }
